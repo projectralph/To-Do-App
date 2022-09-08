@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 
 function App() {
@@ -58,8 +59,9 @@ const getLocalTodos = () => {
   return (
     <div className="App">
       <header>
-     <h1 className='content'>Ralph's Todo List</h1>
+     <h1 className='main'>TO DO LIST</h1>
      </header>
+     <FadeIn>
      <Form 
      inputText={inputText}
      todos={todos}
@@ -69,6 +71,7 @@ const getLocalTodos = () => {
     
      />
      <TodoList setTodos={setTodos} todos={todos} filteredTodos={filteredTodos} />
+     </FadeIn>
     </div>
   );
 }
